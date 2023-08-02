@@ -1,11 +1,11 @@
 //algoritmo
-// 1. Pegar os valores
+// 1. Pegar os valores ok
 // 2. Calcular a Idade
 //       a. Com base no ano
 //       b. Com mês (EXTRA)
 //       c. Com dia (EXTRA)
 
-// 3. Gerar a faixa etária
+    // 3. Gerar a faixa etária
 //    
 //     Resultado            Faixa
 //     0 à 12                Criança
@@ -39,19 +39,12 @@ function calcular(event) {
 
     console.log(classificacaoImc)
 
-
-
-
-
-
-
-
     
 function receberValores() {
     let nomeRecebido = document.getElementById("nome").value.trim()
-    let diaRecebido = document.getElementById("dia-nascimento").value
-    let mesRecebido = document.getElementById("mes-nascimento").value
-    let anoRecebido = document.getElementById("ano-nascimento").value
+    let diaRecebido = parseInt( document.getElementById("dia-nascimento").value)
+    let mesRecebido = parseInt( document.getElementById("mes-nascimento").value)
+    let anoRecebido = parseInt( document.getElementById("ano-nascimento").value)
 
     let dadosUsuario = {
         nome: nomeRecebido,
@@ -63,4 +56,29 @@ function receberValores() {
     console.log(dadosUsuario)
 
     return dadosUsuario
+}
+
+
+//]Passo 2
+
+function calcularIdade(dataNascimento) {
+
+    let dataAtual = new Date()
+let diaNascimento =  dataDeNascimento.getDate()
+let  mesNascimento = dataDeNascimento.getMonth()
+let anoNascimento = dataDeNascimento.getFullYear()
+
+
+let diferencaMes = dataAtual.getMonth() - mesNascimento
+
+   
+    let idade =  dataAtual.getFullYear() -  anoNascimento
+    if (diferencaMes < 0|| (diferencaMes === 0 && dataAtual.getDate() <diaNascimento)) {
+        idade--;
+    }
+
+    console.log(idade)
+
+    return idade
+}
 }
