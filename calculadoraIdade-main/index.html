@@ -16,7 +16,7 @@
         <h1>Calculadora de Idade</h1>
         <section>
             <h2>Cadastro de informações</h2>
-            <form method="post">
+            <form onsubmit="calcular(event)" method="post">
                 <div class="campo-form">
                     <label for="nome">Nome:</label>
                     <input type="text" name="campo-nome" id="nome" placeholder="Insira seu nome completo" >
@@ -59,7 +59,7 @@
                     </tr>                    
                 </tbody>
             </table>
-            <button class="botao-tabela">Limpar Registros</button>
+            <button onclick = "deletarRegistros()" class="botao-tabela">Limpar Registros</button>
         </section>
     </main>
 </body>
